@@ -1,11 +1,11 @@
 # TG-FileConverterBot
-• `Written In` Python3
+• Written In `Python3`
 
 
-• `Library Used` Pyrogram
+• Library Used `Pyrogram`
 
 
-• `Softwares used` Ebook-convert & ffmpeg 
+• Softwares used `Ebook-convert & ffmpeg`
 
 # Vars
 ```
@@ -16,4 +16,4 @@ AUTH_USERS = Your telegram id
 ```
 
 # Credits 
-• [DARK](https://t.me/Bro_isDarkal)
+• [Dark](http://t.me/Bro_isDarkal)
