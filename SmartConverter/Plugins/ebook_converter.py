@@ -60,7 +60,7 @@ async def pdf_call(bot ,update):
     )
     c_time = time.time()
     f_n = await bot.download_media(
-      message=update.message,
+      message=update.message.reply_to_message.message_id,
       file_name=download_location,
       progress=progress_for_pyrogram,
       progress_args=(
