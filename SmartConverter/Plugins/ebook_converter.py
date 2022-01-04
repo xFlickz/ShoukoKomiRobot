@@ -49,15 +49,18 @@ async def pdf_call(bot ,update):
     await update.message.delete()
     
     download_location = Config.DOWNLOAD_LOCATION + "/"
-    #bot_msg = await bot.get_messages(update.message.chat.id, update.message.reply_to_message.message_id) 
+    #bot_msg = await bot.get_messages(update.message.chat.id, update.message.reply_to_message.message_id
+    await asyncio.sleep(1)
     #todown = bot_msg.reply_to_message
-    sent_message = await update.message.edit_text(
-      #chat_id=update.chat.id,
-      text="Downloading")
+    sent_message = await bot.send_message(
+      chat_id=update.message.chat.id,
+      text="`Downloading ...`",
+      reply_to_message_id=update.message.message_id
+    )
     c_time = time.time()
     file_name = await bot.download_media(
       message=update.message,
-      file_name=download_location,
+     # file_name=download_location,
       progress=progress_for_pyrogram,
       progress_args=(
         bot,
