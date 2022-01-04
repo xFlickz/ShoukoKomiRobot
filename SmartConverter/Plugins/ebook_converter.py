@@ -53,7 +53,11 @@ async def pdf_call(bot ,update):
     #bot_msg = await bot.get_messages(update.message.chat.id, update.message.reply_to_message.message_id
     await asyncio.sleep(1)
     #todown = bot_msg.reply_to_message
-    sent_message = await update.message.reply_text(text="`Downloading ...`")
+    sent_message = await bot.send_message(
+      text="`Downloading ...`",
+      chat_id=update.message.chat.id,
+      reply_to_message_id=update.message.reply_to_message.message_id
+    )
     c_time = time.time()
     f_n = await bot.download_media(
       message=update.message,
@@ -61,7 +65,7 @@ async def pdf_call(bot ,update):
       progress=progress_for_pyrogram,
       progress_args=(
         bot,
-        "Downloading",
+        "`Downloading ...`",
         sent_message,
         c_time
       )
