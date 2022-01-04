@@ -18,7 +18,7 @@ async def pdf_call(bot ,m):
         document=o,
         force_document=True,
         caption="Here is your pdf",
-        reply_to_message_id=m.message_id,
+       # reply_to_message_id=m.message_id,
         progress=progress_for_pyrogram,
         progress_args=(bot, "Uploading", m, c_time
         )
@@ -28,5 +28,5 @@ async def pdf_call(bot ,m):
         chat_id=m.chat.id,
         text="Uploaded below..",
         disable_web_page_preview=True,
-        message_id=sent_m.message_id
+        message_id=m.message_id
       )

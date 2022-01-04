@@ -15,18 +15,17 @@ from pyrogram import filters
 from pyrogram.types import Message, InlineKeyboardButton, InlineKeyboardMarkup
 
 @TGBot.on_message(filters.incoming & (filters.video | filters.document))
-async def pdf_message(bot, message):
-  if message.chat.id not in Config.AUTH_USERS:
-    return await message.reply_text("🚷 No Outsider Allowed ⚠️\n\nThis Bot is For Private Use Only.")
+async def pdf_message(bot, update):
+    return await update.reply_text("🚷 No Outsider Allowed ⚠️\n\nThis Bot is For Private Use Only.")
   download_location = Config.DOWNLOAD_LOCATION + "/"
   sent_message = await bot.send_message(
-    chat_id=message.chat.id,
+    chat_id=update.chat.id,
     text="Downloading",
-    reply_to_message_id=message.message_id
+    reply_to_message_id=update.message_id
   )
   c_time = time.time()
   file_name = await bot.download_media(
-    message=message,
+    message=update,
     #file_name=download_location,
     progress=progress_for_pyrogram,
     progress_args=(
@@ -40,13 +39,13 @@ async def pdf_message(bot, message):
   
   if file_name.rsplit(".", 1)[-1].lower() not in ["epub", "pdf", "cbz", "docx", "doc", "ppt", "mobi", "txt", "zip"]:
     return await bot.edit_message_text(
-      chat_id=message.chat.id,
+      chat_id=update.chat.id,
       text="This Video Format not Allowed!",
       message_id=sent_message.message_id
     )
     
   await bot.edit_message_text(
-    chat_id=message.chat.id,
+    chat_id=update.chat.id,
     text="Sᴇʟᴇᴄᴛ Tʜᴇ Fᴏʀᴍᴀᴛ Yᴏᴜ Wᴀɴɴᴀ Cᴏɴᴠᴇʀᴛ",
     reply_markup=InlineKeyboardMarkup(
       [
