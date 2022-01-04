@@ -66,8 +66,7 @@ async def pdf_call(bot ,update):
       progress_args=(
         bot,
         "`Downloading ...`",
-        sent_message,
-        c_time
+        sent_message
       )
     )
     logger.info(f_n)
