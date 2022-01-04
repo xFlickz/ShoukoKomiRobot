@@ -43,7 +43,7 @@ async def pdf_message(bot, message):
 # if clicked pdf
 
 @TGBot.on_callback_query()
-async def pdf_call(bot ,update: CallbackQuery):
+async def pdf_call(bot ,update):
   if update.data == "pdf":
     download_location = Config.DOWNLOAD_LOCATION + "/"
     sent_message = await update.message.edit_text(
