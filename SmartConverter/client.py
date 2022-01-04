@@ -17,8 +17,8 @@ class TGclient(Client):
       bot_token=Config.BOT_TOKEN,
       workdir="./",
       plugins=dict(root="SmartConverter/Plugins")
-        )
-      bot_info = None
+    )
+    bot_info = None
   
   async def __run(self):
     await super().start()
