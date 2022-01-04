@@ -47,7 +47,7 @@ async def pdf_message(bot, update):
       message_id=sent_message.message_id
     )
     
-  await update.edit_text(
+  await bot.edit_message_text(
     text="Sᴇʟᴇᴄᴛ Tʜᴇ Fᴏʀᴍᴀᴛ Yᴏᴜ Wᴀɴɴᴀ Cᴏɴᴠᴇʀᴛ",
     reply_markup=InlineKeyboardMarkup(
       [
@@ -59,10 +59,12 @@ async def pdf_message(bot, update):
         [
           InlineKeyboardButton("Docx",callback_data="docx"),
           InlineKeyboardButton("Doc", callback_data="doc"),
-          InlineKeyboardButton("Txt", callback_data="txt")
-        ],
+          InlineKeyboardButton("Txt", callback_data="txt")],
       ],
-    )
+    ),
+    chat_id=update.chat.id,
+    parse_mode="markdown",
+    message_id=sent_message.message_id
   )
   
 
