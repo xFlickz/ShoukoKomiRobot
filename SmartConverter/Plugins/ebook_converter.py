@@ -16,7 +16,10 @@ from pyrogram.types import Message, InlineKeyboardButton, InlineKeyboardMarkup
 
 @TGBot.on_message(filters.incoming & (filters.video | filters.document))
 async def pdf_message(bot, update):
-    return await update.reply_text("🚷 No Outsider Allowed ⚠️\n\nThis Bot is For Private Use Only.")
+  if update.chat.id not in Config.AUTH_USERS:
+    await update.reply_text("🚷 No Outsider Allowed ⚠️\n\nThis Bot is For Private Use Only.")
+    return
+    
   download_location = Config.DOWNLOAD_LOCATION + "/"
   sent_message = await bot.send_message(
     chat_id=update.chat.id,
