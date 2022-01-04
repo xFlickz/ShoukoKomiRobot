@@ -16,12 +16,12 @@ from pyrogram.types import Message, InlineKeyboardButton, InlineKeyboardMarkup
 from SmartConverter.Plugins.pdf import p_d_f
 
 @TGBot.on_message(filters.incoming & (filters.video | filters.document))
-async def pdf_message(bot, update):
-  if update.chat.id not in Config.AUTH_USERS:
-    await update.reply_text("🚷 No Outsider Allowed ⚠️\n\nThis Bot is For Private Use Only.")
+async def pdf_message(bot, message):
+  if message.chat.id not in Config.AUTH_USERS:
+    await message.reply_text("🚷 No Outsider Allowed ⚠️\n\nThis Bot is For Private Use Only.")
     return
   
-  await update.reply_text(
+  await message.reply_text(
     text="Sᴇʟᴇᴄᴛ Tʜᴇ Fᴏʀᴍᴀᴛ Yᴏᴜ Wᴀɴɴᴀ Cᴏɴᴠᴇʀᴛ",
     reply_markup=InlineKeyboardMarkup(
       [
@@ -43,16 +43,16 @@ async def pdf_message(bot, update):
 # if clicked pdf
 
 @TGBot.on_callback_query()
-async def pdf_call(bot ,update):
+async def pdf_call(bot ,update: CallbackQuery):
   if update.data == "pdf":
     download_location = Config.DOWNLOAD_LOCATION + "/"
-    sent_message = await update.edit_text(
+    sent_message = await update.message.edit_text(
       #chat_id=update.chat.id,
       text="Downloading")
     c_time = time.time()
     file_name = await bot.download_media(
-      message=update,
-        #file_name=download_location,
+      message=update.message,
+      file_name=download_location,
       progress=progress_for_pyrogram,
       progress_args=(
         bot,
@@ -64,7 +64,7 @@ async def pdf_call(bot ,update):
     logger.info(file_name)
     
     if file_name.rsplit(".", 1)[-1].lower() not in ["epub", "cbz", "docx", "doc", "ppt", "mobi", "txt", "zip"]:
-      return await update.edit_text(
+      return await update.message.edit_text(
         #chat_id=update.chat.id,
         text="This Video Format not Allowed!"
         #message_id=sent_message.message_id
@@ -76,18 +76,18 @@ async def pdf_call(bot ,update):
     )
     logger.info(o)
     if o is not None:
-      await update.edit_text("Uploading")
+      await update.message.edit_text("Uploading")
       await bot.send_document(
-        chat_id=update.chat.id,
+        chat_id=update.message,
         document=o,
         force_document=True,
         caption="Here is your pdf",
        # reply_to_message_id=m.message_id,
         progress=progress_for_pyrogram,
-        progress_args=(bot, "Uploading", m, c_time
+        progress_args=(bot, "Uploading", sent_message, c_time
         )
       )
       os.remove(o)
-      await update.edit_text(
+      await update.message.edit_text(
         #chat_id=update.chat.id,
         text="Uploaded below..")
