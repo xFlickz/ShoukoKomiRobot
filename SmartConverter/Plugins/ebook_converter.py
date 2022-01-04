@@ -10,6 +10,7 @@ from SmartConverter.Tools.progress import ( TimeFormatter,
   progress_for_pyrogram
 )
 import subprocess
+import asyncio
 from .. import TGBot
 from pyrogram import filters
 from pyrogram.types import Message, InlineKeyboardButton, InlineKeyboardMarkup
