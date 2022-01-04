@@ -23,7 +23,7 @@ class TGclient(Client):
   async def __run(self):
     await super().start()
     self.bot_info  = await self.get_me()
-    logging.info(f"@{self.bot_info.username} has started)
+    logging.info(f"@{self.bot_info.username} has started")
     await idle()
     
   def run(self):
