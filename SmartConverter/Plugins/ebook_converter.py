@@ -21,17 +21,17 @@ async def pdf_message(bot, message):
   download_location = Config.DOWNLOAD_LOCATION + "/"
   sent_message = await bot.send_message(
     chat_id=message.chat.id,
-    text="Dᴏᴡɴʟᴏᴀᴅɪɴɢ",
+    text="Downloading",
     reply_to_message_id=message.message_id
   )
   c_time = time.time()
   file_name = await bot.download_media(
-    message=message.reply_to_message,
-    file_name=download_location,
+    message=message,
+    #file_name=download_location,
     progress=progress_for_pyrogram,
     progress_args=(
       bot,
-      "Dᴏᴡɴʟᴏᴀᴅɪɴɢ",
+      "Downloading",
       sent_message,
       c_time
     )
