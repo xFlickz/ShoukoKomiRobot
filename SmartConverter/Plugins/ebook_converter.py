@@ -64,9 +64,9 @@ async def pdf_call(bot ,update):
       file_name=download_location,
       progress=progress_for_pyrogram,
       progress_args=(
-        bot,
         "`Downloading ...`",
-        sent_message
+        sent_message,
+        c_time
       )
     )
     logger.info(f_n)
