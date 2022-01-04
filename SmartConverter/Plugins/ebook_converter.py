@@ -47,13 +47,15 @@ async def pdf_message(bot, message):
 async def pdf_call(bot ,update):
   if update.data == "pdf":
     download_location = Config.DOWNLOAD_LOCATION + "/"
+    bot_msg = await bot.get_messages(update.message.chat.id, update.message.reply_to_message.message_id) 
+    todown = bot_msg.reply_to_message
     sent_message = await update.message.edit_text(
       #chat_id=update.chat.id,
       text="Downloading")
     c_time = time.time()
     file_name = await bot.download_media(
-      message=update.message.reply_to_message_id,
-      #ile_name=download_location,
+      message=todown,
+      file_name=download_location,
       progress=progress_for_pyrogram,
       progress_args=(
         bot,
