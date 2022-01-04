@@ -46,6 +46,8 @@ async def pdf_message(bot, message):
 @TGBot.on_callback_query()
 async def pdf_call(bot ,update):
   if update.data == "pdf":
+    await update.message.delete()
+    
     download_location = Config.DOWNLOAD_LOCATION + "/"
     #bot_msg = await bot.get_messages(update.message.chat.id, update.message.reply_to_message.message_id) 
     #todown = bot_msg.reply_to_message
