@@ -36,6 +36,7 @@ async def pdf_message(bot, message):
           InlineKeyboardButton("Txt", callback_data="txt")],
       ],
     ),
+    quote=True,
     parse_mode="markdown"
   )
 # ---------------------------------------
@@ -51,8 +52,8 @@ async def pdf_call(bot ,update):
       text="Downloading")
     c_time = time.time()
     file_name = await bot.download_media(
-      message=update.message,
-      file_name=download_location,
+      message=update.message.reply_to_message_id,
+      #ile_name=download_location,
       progress=progress_for_pyrogram,
       progress_args=(
         bot,
