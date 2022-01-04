@@ -15,7 +15,7 @@ from pyrogram import filters
 from pyrogram.types import Message, InlineKeyboardButton, InlineKeyboardMarkup
 
 @TGBot.on_message(filters.incoming & (filters.video | filters.document))
-async def pdf_message(app, message):
+async def pdf_message(bot, message):
   if message.chat.id not in Config.AUTH_USERS:
     return await message.reply_text("🚷 No Outsider Allowed ⚠️\n\nThis Bot is For Private Use Only.")
   download_location = Config.DOWNLOAD_LOCATION + "/"
