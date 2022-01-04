@@ -1,1 +1,1 @@
-python3 -m SmartConverter 
+python3 -m SmartConverter
