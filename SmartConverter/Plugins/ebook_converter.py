@@ -21,7 +21,7 @@ async def pdf_message(bot, update):
     await update.reply_text("🚷 No Outsider Allowed ⚠️\n\nThis Bot is For Private Use Only.")
     return
   
-  await bot.send_message(
+  await update.reply_text(
     text="Sᴇʟᴇᴄᴛ Tʜᴇ Fᴏʀᴍᴀᴛ Yᴏᴜ Wᴀɴɴᴀ Cᴏɴᴠᴇʀᴛ",
     reply_markup=InlineKeyboardMarkup(
       [
@@ -36,7 +36,6 @@ async def pdf_message(bot, update):
           InlineKeyboardButton("Txt", callback_data="txt")],
       ],
     ),
-    chat_id=update.chat.id,
     parse_mode="markdown"
   )
 # ---------------------------------------
@@ -47,11 +46,9 @@ async def pdf_message(bot, update):
 async def pdf_call(bot ,update):
   if update.data == "pdf":
     download_location = Config.DOWNLOAD_LOCATION + "/"
-    sent_message = await bot.send_message(
-      chat_id=update.chat.id,
-      text="Downloading",
-      reply_to_message_id=update.message_id
-    )
+    sent_message = await update.edit_text(
+      #chat_id=update.chat.id,
+      text="Downloading")
     c_time = time.time()
     file_name = await bot.download_media(
       message=update,
@@ -67,10 +64,10 @@ async def pdf_call(bot ,update):
     logger.info(file_name)
     
     if file_name.rsplit(".", 1)[-1].lower() not in ["epub", "cbz", "docx", "doc", "ppt", "mobi", "txt", "zip"]:
-      return await bot.edit_message_text(
-        chat_id=update.chat.id,
-        text="This Video Format not Allowed!",
-        message_id=sent_message.message_id
+      return await update.edit_text(
+        #chat_id=update.chat.id,
+        text="This Video Format not Allowed!"
+        #message_id=sent_message.message_id
       )
     await p_d_f(
       file_name, 
@@ -91,9 +88,6 @@ async def pdf_call(bot ,update):
         )
       )
       os.remove(o)
-      await bot.edit_message_text(
-        chat_id=update.chat.id,
-        text="Uploaded below..",
-        disable_web_page_preview=True,
-        message_id=update.message_id
-      )
+      await update.edit_text(
+        #chat_id=update.chat.id,
+        text="Uploaded below..")
