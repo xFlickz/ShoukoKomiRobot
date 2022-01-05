@@ -29,15 +29,16 @@ async def start_cmd_handler(bot, message):
 async def helpo(bot, message):
   data = message.data 
   if data == "help":
-    await message.message.edit_text(
-      text=Translation.HELP_TEXT,
-      parse_mode="markdown",
-      reply_markup=InlineKeyboardMarkup(
-        [
-          [InlineKeyboardButton("✫𝙱𝙰𝙲𝙺✫", callback_data="back")],
-        ],
-      )
-    )
+    await message.message.delete()
+    #await message.message.edit_text(
+      #text=Translation.HELP_TEXT,
+      #parse_mode="markdown",
+      #reply_markup=InlineKeyboardMarkup(
+        #[
+          #[InlineKeyboardButton("✫𝙱𝙰𝙲𝙺✫", callback_data="back")],
+        #],
+      #)
+    #)
   elif data == "about":
     await message.message.edit_text(
       caption="**LANGUAGE** [Python](https://www.python.org)\n**LIBRARY** [Pyrogram](https://www.pyrogram.org)\n**SOURCE CODE** [Click me](https://t.me/Shity_man)\n**DEV** [Dark](https://t.me/Bro_isDarkal)",
