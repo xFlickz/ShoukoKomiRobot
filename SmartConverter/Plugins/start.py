@@ -1,6 +1,6 @@
 # (c) Dark
 from SmartConverter.Plugins.converter import *
-from translation import Translation
+from SmartConverter.translation import Translation
 
 @TGBot.on_message(filters.command("start", prefixes=["/", "."]))
 async def start_cmd_handler(bot, message):
