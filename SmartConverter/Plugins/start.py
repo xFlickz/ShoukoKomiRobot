@@ -1,12 +1,13 @@
 # (c) Dark
 from SmartConverter.Plugins.converter import *
+from translation import Translation
 
 @TGBot.on_message(filters.command("start", prefixes=["/", "."]))
 async def start_cmd_handler(bot, message):
   await bot.send_video(
     chat_id=message.chat.id,
-    video="BAACAgEAAxkBAAIEpWHVfyAYkc1g9N5bL9MJVBdX91vaAAIJAgACHs2wRusz6W4Tzh7NIwQ",
-    caption="**Hello** {message.from_user.mention}\nI am Telegram SmartConverter Bot that converts files' format in your desired one.\nMy owner will reveal the open source soon. Support me by joining my network and channel 😇.",
+    video="https://telegra.ph/file/f7006e236e28ba090d407.mp4",
+    caption=Translation.START_TEXT,
     reply_markup=InlineKeyboardMarkup(
       [
         [
@@ -25,19 +26,46 @@ async def start_cmd_handler(bot, message):
 async def helpo(bot, m):
   if m.data == "help":
     await m.message.delete()
-    await bot.send_message(
+    await bot.send_video(
       chat_id=m.message.chat.id,
-      text="• Send me a file.\n• Click the desired format button.\n• Bot will download , convert and upload.",
-      parse_mode="markdown"
+      video="https://telegra.ph/file/33186a24917037de0d97a.mp4",
+      text=Translation.HELP_TEXT,
+      parse_mode="markdown",
+      reply_markup=InlineKeyboardMarkup(
+        [
+          [InlineKeyboardButton("Back", callback_data="back")],
+        ],
+      )
     )
   elif m.data == "about":
     await m.message.delete()
-    await bot.send_message(
+    await bot.send_video(
       chat_id=m.message.chat.id,
-      text="**LANGUAGE** [Python](https://www.python.org)\n**LIBRARY** [Pyrogram](https://www.pyrogram.org)\n**SOURCE CODE** [Click me](https://t.me/Shity_man)",
+      video="https://telegra.ph/file/a7f47db6297329258755e.mp4",
+      caption="**LANGUAGE** [Python](https://www.python.org)\n**LIBRARY** [Pyrogram](https://www.pyrogram.org)\n**SOURCE CODE** [Click me](https://t.me/Shity_man)\n**DEV** [Dark](https://t.me/Bro_isDarkal)",
+      parse_mode="markdown",
+      reply_markup=InlineKeyboardMarkup(
+        [
+          [InlineKeyboardButton("Back", callback_data="back")],
+        ],
+      )
+    )
+  elif m.data == "back":
+    await m.message.delete()
+    await bot.send_video(
+      chat_id=m.message.chat.id,
+      video="https://telegra.ph/file/f7006e236e28ba090d407.mp4",
+      caption=Translation.START_TEXT,
+      reply_markup=InlineKeyboardMarkup(
+        [
+          [
+            InlineKeyboardButton("Help", callback_data="help"),
+            InlineKeyboardButton("About", callback_data="about")
+          ],
+          [
+            InlineKeyboardButton("Network", url="http://t.me/StrawHat_Network")
+          ],
+        ],
+      ),
       parse_mode="markdown"
     )
-      
-      
-    
-        
