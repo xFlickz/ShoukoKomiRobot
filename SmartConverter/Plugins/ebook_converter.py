@@ -50,7 +50,6 @@ async def pdf_call(bot ,update):
     await update.message.delete()
     
     download_location = Config.DOWNLOAD_LOCATION + "/"
-    message = await TGBot.get_messages(chat_id=chat_id, message_ids=int(message_id))
     #bot_msg = await bot.get_messages(update.message.chat.id, update.message.reply_to_message.message_id
     await asyncio.sleep(1)
     #todown = bot_msg.reply_to_message
@@ -60,7 +59,8 @@ async def pdf_call(bot ,update):
       reply_to_message_id=update.message.reply_to_message.message_id
     )
     c_time = time.time()
-    f_n = await message.download(
+    f_n = await bot.download_media(
+      message=update.message.reply_to_message,
       file_name=download_location,
       progress=progress_for_pyrogram,
       progress_args=(
