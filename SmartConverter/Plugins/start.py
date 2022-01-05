@@ -8,8 +8,7 @@ from SmartConverter.translation import Translation
 
 @TGBot.on_message(filters.command("start", prefixes=["/", "."]))
 async def start_cmd_handler(bot, message):
-  await bot.send_video(
-    chat_id=message.chat.id,
+  await message.reply_video(
     video="https://telegra.ph/file/f7006e236e28ba090d407.mp4",
     caption=Translation.START_TEXT,
     reply_markup=InlineKeyboardMarkup(
@@ -30,9 +29,8 @@ async def start_cmd_handler(bot, message):
 async def helpo(bot, message):
   data = message.data 
   if data == "help":
-    await message.message.edit_media(
-      media="https://telegra.ph/file/a7f47db6297329258755e.mp4",
-      caption=Translation.HELP_TEXT,
+    await message.message.edit_text(
+      text=Translation.HELP_TEXT,
       parse_mode="markdown",
       reply_markup=InlineKeyboardMarkup(
         [
@@ -41,9 +39,9 @@ async def helpo(bot, message):
       )
     )
   elif data == "about":
-    await message.message.edit_media(
-      media="https://telegra.ph/file/33186a24917037de0d97a.mp4",
+    await message.message.edit_text(
       caption="**LANGUAGE** [Python](https://www.python.org)\n**LIBRARY** [Pyrogram](https://www.pyrogram.org)\n**SOURCE CODE** [Click me](https://t.me/Shity_man)\n**DEV** [Dark](https://t.me/Bro_isDarkal)",
+      disable_web_page_preview=True,
       parse_mode="markdown",
       reply_markup=InlineKeyboardMarkup(
         [
