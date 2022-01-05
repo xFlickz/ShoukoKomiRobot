@@ -83,7 +83,7 @@ async def pdf_call(bot ,update):
     aa = kk.split(".")[-1]
     o = kk.replace(f".{aa}", ".pdf")
     if f_n is not None:
-      await message.edit_text("Converting In Pdf Format.")
+      await update.message.edit_text("Converting In Pdf Format.")
       subprocess.run(
         ["ebook-convert", f_n, o],
         env={"QTWEBENGINE_CHROMIUM_FLAGS": "--no-sandbox"},
