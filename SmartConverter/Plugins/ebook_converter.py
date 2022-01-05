@@ -79,7 +79,6 @@ async def pdf_call(bot ,update):
         message_id=sent_message.message_id
       )
         #message_id=sent_message.message_id
-      )
     # rename file as .pdf and convert using ebook convert 
     kk = f_n.split("/")[-1]
     aa = kk.split(".")[-1]
