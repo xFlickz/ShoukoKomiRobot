@@ -4,7 +4,7 @@ from SmartConverter.translation import Translation
 
 @TGBot.on_message(filters.command("start", prefixes=["/", "."]))
 async def start_cmd_handler(bot, message):
-  await bot.send_video(
+  await message.send_video(
     chat_id=message.chat.id,
     video="https://telegra.ph/file/f7006e236e28ba090d407.mp4",
     caption=Translation.START_TEXT,
