@@ -107,7 +107,7 @@ async def pdf_call(bot ,update):
         message_id=sent_message.message_id
       )
       await bot.send_document(
-        chat_id=update.message,
+        chat_id=update.message.chat.id,
         document=o,
         force_document=True,
         caption=f"**{o}**",
