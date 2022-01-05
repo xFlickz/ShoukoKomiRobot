@@ -22,7 +22,8 @@ async def start_cmd_handler(bot, message):
         ],
       ],
     ),
-    parse_mode="markdown"
+    parse_mode="markdown",
+    quote=True
   )
   
 @TGBot.on_callback_query()
