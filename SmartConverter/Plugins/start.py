@@ -26,7 +26,7 @@ async def helpo(bot, m):
   if m.data == "help":
     await m.message.delete()
     await bot.send_message(
-      chat.id=m.message.chat.id,
+      chat_id=m.message.chat.id,
       text="• Send me a file.\n• Click the desired format button.\n• Bot will download , convert and upload.",
       parse_mode="markdown"
     )
