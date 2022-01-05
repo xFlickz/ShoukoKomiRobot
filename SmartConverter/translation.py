@@ -1,5 +1,4 @@
 class Translation:
-  START_TEXT = "✪ Hello, I am Komi Tool Kit. I can convert various files in your desired format.\nPlease Join My Network Also."
+  START_TEXT = "✫𝖧𝖾𝗅𝗅𝗈, 𝖨 𝖺𝗆 𝖪𝗈𝗆𝗂. 𝖨 𝖼𝖺𝗇 𝖼𝗈𝗇𝗏𝖾𝗋𝗍 𝗏𝖺𝗋𝗂𝗈𝗎𝗌 𝖿𝗂𝗅𝖾𝗌 𝗂𝗇 𝗒𝗈𝗎𝗋 𝖽𝖾𝗌𝗂𝗋𝖾𝖽 𝖿𝗈𝗋𝗆𝖺𝗍.\n𝖯𝗅𝖾𝖺𝗌𝖾 𝖩𝗈𝗂𝗇 𝖬𝗒 𝖭𝖾𝗍𝗐𝗈𝗋𝗄 𝖠𝗅𝗌𝗈✫"
   
-  HELP_TEXT = "Just send me a file to get started 😇\nAllowed Formats are epub, pdf, docx, doc, cbz and txt"
-  
+  HELP_TEXT = "𝖩𝗎𝗌𝗍 𝗌𝖾𝗇𝖽 𝗆𝖾 𝖺 𝖿𝗂𝗅𝖾 𝗍𝗈 𝗀𝖾𝗍 𝗌𝗍𝖺𝗋𝗍𝖾𝖽\n𝖠𝗅𝗅𝗈𝗐𝖾𝖽 𝖥𝗈𝗋𝗆𝖺𝗍𝗌 𝖺𝗋𝖾 𝖾𝗉𝗎𝖻, 𝗉𝖽𝖿, 𝖽𝗈𝖼𝗑, 𝖽𝗈𝖼, 𝖼𝖻𝗓 𝖺𝗇𝖽 𝗍𝗑𝗍"

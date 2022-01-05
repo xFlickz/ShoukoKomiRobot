@@ -1,21 +1,25 @@
-# (c) Dark
+"""
+This Bot Was Developed By The Owner Of @StrawHat_Network.
+Join his network and support him.
+"""
+
 from SmartConverter.Plugins.converter import *
 from SmartConverter.translation import Translation
 
 @TGBot.on_message(filters.command("start", prefixes=["/", "."]))
 async def start_cmd_handler(bot, message):
-  await message.send_video(
+  await bot.send_video(
     chat_id=message.chat.id,
     video="https://telegra.ph/file/f7006e236e28ba090d407.mp4",
     caption=Translation.START_TEXT,
     reply_markup=InlineKeyboardMarkup(
       [
         [
-          InlineKeyboardButton("Help", callback_data="help"),
-          InlineKeyboardButton("About", callback_data="about")
+          InlineKeyboardButton("✫𝙷𝙴𝙻𝙿✫", callback_data="help"),
+          InlineKeyboardButton("✫𝙰𝙱𝙾𝚄𝚃✫", callback_data="about")
         ],
         [
-          InlineKeyboardButton("Network", url="http://t.me/StrawHat_Network")
+          InlineKeyboardButton("✫𝙽𝙴𝚃𝚆𝙾𝚁𝙺✫", url="http://t.me/StrawHat_Network")
         ],
       ],
     ),
@@ -24,46 +28,41 @@ async def start_cmd_handler(bot, message):
   
 @TGBot.on_callback_query()
 async def helpo(bot, message):
-  if bot.data == "help":
-    await message.message.delete()
-    await bot.send_video(
-      chat_id=message.message.chat.id,
-      video="https://telegra.ph/file/33186a24917037de0d97a.mp4",
-      text=Translation.HELP_TEXT,
+  data = message.data 
+  if data == "help":
+    await message.message.edit_media(
+      media="https://telegra.ph/file/a7f47db6297329258755e.mp4",
+      caption=Translation.HELP_TEXT,
       parse_mode="markdown",
       reply_markup=InlineKeyboardMarkup(
         [
-          [InlineKeyboardButton("Back", callback_data="back")],
+          [InlineKeyboardButton("✫𝙱𝙰𝙲𝙺✫", callback_data="back")],
         ],
       )
     )
-  elif bot.data == "about":
-    await message.message.delete()
-    await bot.send_video(
-      chat_id=message.message.chat.id,
-      video="https://telegra.ph/file/a7f47db6297329258755e.mp4",
+  elif data == "about":
+    await message.message.edit_media(
+      media="https://telegra.ph/file/33186a24917037de0d97a.mp4",
       caption="**LANGUAGE** [Python](https://www.python.org)\n**LIBRARY** [Pyrogram](https://www.pyrogram.org)\n**SOURCE CODE** [Click me](https://t.me/Shity_man)\n**DEV** [Dark](https://t.me/Bro_isDarkal)",
       parse_mode="markdown",
       reply_markup=InlineKeyboardMarkup(
         [
-          [InlineKeyboardButton("Back", callback_data="back")],
+          [InlineKeyboardButton("✫𝙱𝙰𝙲𝙺✫", callback_data="back")],
         ],
       )
     )
-  elif bot.data == "back":
-    await message.message.delete()
-    await bot.send_video(
-      chat_id=message.message.chat.id,
-      video="https://telegra.ph/file/f7006e236e28ba090d407.mp4",
+  elif data == "back":
+    await message.message.edit_media(
+      media="https://telegra.ph/file/f7006e236e28ba090d407.mp4",
       caption=Translation.START_TEXT,
       reply_markup=InlineKeyboardMarkup(
         [
           [
-            InlineKeyboardButton("Help", callback_data="help"),
-            InlineKeyboardButton("About", callback_data="about")
+            InlineKeyboardButton("✫𝙷𝙴𝙻𝙿✫", callback_data="help"),
+            InlineKeyboardButton("✫𝙰𝙱𝙾𝚄𝚃✫", callback_data="about")
           ],
           [
-            InlineKeyboardButton("Network", url="http://t.me/StrawHat_Network")
+            InlineKeyboardButton("✫𝙽𝙴𝚃𝚆𝙾𝚁𝙺✫", url="http://t.me/StrawHat_Network")
           ],
         ],
       ),
