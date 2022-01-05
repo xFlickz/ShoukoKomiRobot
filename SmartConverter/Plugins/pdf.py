@@ -18,7 +18,7 @@ async def p_d_f(dl, ul, message):
   kk = dl.split("/")[-1]
   aa = kk.split(".")[-1]
   ul = kk.replace(f".{aa}", ".pdf")
-  if dl is not none:
+  if dl is not None:
     await message.edit_text("Converting In Pdf Format.")
     
     subprocess.run(
