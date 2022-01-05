@@ -78,11 +78,12 @@ async def pdf_call(bot ,update):
         text="This Video Format not Allowed!"
         #message_id=sent_message.message_id
       )
-    await p_d_f(
+    o = await p_d_f(
       f_n, 
-      o, 
+      Config.DOWNLOAD_LOCATION,
       m
     )
+    
     logger.info(o)
     if o is not None:
       await update.message.edit_text("Uploading")
