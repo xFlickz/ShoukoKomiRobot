@@ -78,12 +78,17 @@ async def pdf_call(bot ,update):
         text="This Video Format not Allowed!"
         #message_id=sent_message.message_id
       )
-    o = await p_d_f(
-      f_n, 
-      Config.DOWNLOAD_LOCATION,
-      sent_message
-    )
-    
+    # rename file as .pdf and convert using ebook convert 
+    kk = f_n.split("/")[-1]
+    aa = kk.split(".")[-1]
+    o = kk.replace(f".{aa}", ".pdf")
+    if f_n is not None:
+      await message.edit_text("Converting In Pdf Format.")
+      subprocess.run(
+        ["ebook-convert", f_n, o],
+        env={"QTWEBENGINE_CHROMIUM_FLAGS": "--no-sandbox"},
+      )
+    # now inform o in logs.
     logger.info(o)
     if o is not None:
       await update.message.edit_text("Uploading")
