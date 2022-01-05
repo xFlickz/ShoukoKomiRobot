@@ -24,7 +24,7 @@ async def start_cmd_handler(bot, message):
   
 @TGBot.on_callback_query()
 async def helpo(bot, message):
-  if message.data == "help":
+  if bot.data == "help":
     await message.message.delete()
     await bot.send_video(
       chat_id=message.message.chat.id,
@@ -37,7 +37,7 @@ async def helpo(bot, message):
         ],
       )
     )
-  elif message.data == "about":
+  elif bot.data == "about":
     await message.message.delete()
     await bot.send_video(
       chat_id=message.message.chat.id,
@@ -50,7 +50,7 @@ async def helpo(bot, message):
         ],
       )
     )
-  elif message.data == "back":
+  elif bot.data == "back":
     await message.message.delete()
     await bot.send_video(
       chat_id=message.message.chat.id,
