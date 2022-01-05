@@ -1,6 +1,6 @@
 FROM linuxserver/calibre:latest
 
-WORKDIR /HinaSenei
+WORKDIR /Processed_By
 
 RUN apt-get -y update \
   && apt -y install python3-pip \

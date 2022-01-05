@@ -73,9 +73,11 @@ async def pdf_call(bot ,update):
     logger.info(f_n)
     
     if f_n.rsplit(".", 1)[-1].lower() not in ["epub", "cbz", "docx", "doc", "ppt", "mobi", "txt", "zip"]:
-      return await update.message.edit_text(
-        #chat_id=update.chat.id,
-        text="This Video Format not Allowed!"
+      return await bot.edit_message_text(
+        chat_id=update.message.chat.id,
+        text="This Video Format not Allowed!",
+        message_id=sent_message.message_id
+      )
         #message_id=sent_message.message_id
       )
     # rename file as .pdf and convert using ebook convert 
@@ -83,26 +85,36 @@ async def pdf_call(bot ,update):
     aa = kk.split(".")[-1]
     o = kk.replace(f".{aa}", ".pdf")
     if f_n is not None:
-      await update.message.edit_text("Converting In Pdf Format.")
+      await bot.edit_message_text(
+        text="`Processing your file ... 👀`",
+        chat_id=update.message.chat.id,
+        message_id=sent_message.message_id
+      )
+      await asyncio.sleep(1)
+      await bot.edit_message_text(
+        text="`Converting Your File In Pdf Format ...`",
+        chat_id=update.message.chat.id,
+        message_id=sent_message.message_id
+      )
       subprocess.run(
         ["ebook-convert", f_n, o],
         env={"QTWEBENGINE_CHROMIUM_FLAGS": "--no-sandbox"},
       )
-    # now inform o in logs.
     logger.info(o)
     if o is not None:
-      await update.message.edit_text("Uploading")
+      await bot.edit_message_text(
+        text="`Uploading ...`",
+        chat_id=update.message.chat.id,
+        message_id=sent_message.message_id
+      )
       await bot.send_document(
         chat_id=update.message,
         document=o,
         force_document=True,
-        caption="Here is your pdf",
+        caption=f"**{o}**",
        # reply_to_message_id=m.message_id,
         progress=progress_for_pyrogram,
-        progress_args=(bot, "Uploading", sent_message, c_time
+        progress_args=(bot, "`Uploading ...`", sent_message, c_time
         )
       )
       os.remove(o)
-      await update.message.edit_text(
-        #chat_id=update.chat.id,
-        text="Uploaded below..")

@@ -9,7 +9,7 @@ class Config(object):
   API_HASH = os.environ.get("API_HASH")
   BOT_TOKEN = os.environ.get("BOT_TOKEN")
   AUTH_USERS = os.environ.get("AUTH_USERS")
-  DOWNLOAD_LOCATION = "./temp"   
+  DOWNLOAD_LOCATION = "./@StrawHat_Network"
 
 Config.AUTH_USERS = -1001782235504, 1666551439, 1930343434
 
