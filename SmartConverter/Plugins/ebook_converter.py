@@ -81,7 +81,7 @@ async def pdf_call(bot ,update):
     o = await p_d_f(
       f_n, 
       Config.DOWNLOAD_LOCATION,
-      m
+      sent_message
     )
     
     logger.info(o)
