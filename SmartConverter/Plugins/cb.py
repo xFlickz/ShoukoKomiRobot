@@ -12,9 +12,12 @@ async def calls(bot ,update):
             InlineKeyboardButton("✫𝙼𝙿4✫", callback_data="mp4"),
             InlineKeyboardButton("✫𝙼𝙺𝚅✫", callback_data="mkv"),
             InlineKeyboardButton("✫𝚂𝚃𝚁𝙴𝙰𝙼✫", callback_data="stream")
+          ],
+          [
             InlineKeyboardButton("🔙", callback_data="back_to")],
         ],
       )
+    )
   elif update.data == "back_to":
   async def back_man(bot, update):
     await update.message.edit_text(
