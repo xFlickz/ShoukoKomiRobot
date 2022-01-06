@@ -307,7 +307,7 @@ async def pdf_call(bot ,update):
       )
     kk = f_n.split("/")[-1]
     aa = kk.split(".")[-1]
-    o = kk.replace(f".{aa}", ".docx")
+    o = kk.replace(f".{aa}", ".doc")
     if f_n is not None:
       await bot.edit_message_text(
         text="`𝙿𝚛𝚘𝚌𝚎𝚜𝚜𝚒𝚗𝚐 𝚢𝚘𝚞𝚛 𝚏𝚒𝚕𝚎 ...`",
@@ -373,7 +373,7 @@ async def pdf_call(bot ,update):
       )
     kk = f_n.split("/")[-1]
     aa = kk.split(".")[-1]
-    o = kk.replace(f".{aa}", ".docx")
+    o = kk.replace(f".{aa}", ".txt")
     if f_n is not None:
       await bot.edit_message_text(
         text="`𝙿𝚛𝚘𝚌𝚎𝚜𝚜𝚒𝚗𝚐 𝚢𝚘𝚞𝚛 𝚏𝚒𝚕𝚎 ...`",
