@@ -17,8 +17,8 @@ async def start_cmd_handler(bot, message):
     reply_markup=InlineKeyboardMarkup(
       [
         [
-          InlineKeyboardButton("✫𝙷𝙴𝙻𝙿✫", url="https://t.me/TG_FileConverterBot?start=help"),
-          InlineKeyboardButton("✫𝙰𝙱𝙾𝚄𝚃✫", url="https://t.me/TG_FileConverterBot?start=about")
+          InlineKeyboardButton("✫𝙷𝙴𝙻𝙿✫", callback_data="hilp"),
+          InlineKeyboardButton("✫𝙳𝙴𝚅✫", url="https://t.me/Bro_isDarkal")
         ],
         [
           InlineKeyboardButton("✫𝙽𝙴𝚃𝚆𝙾𝚁𝙺✫", url="http://t.me/StrawHat_Network")
@@ -30,21 +30,33 @@ async def start_cmd_handler(bot, message):
   )
 
 
+
+async def help_message(bot, update):
+  await update.message.reply_video(
+    video="https://telegra.ph/file/ebd8a53dafca84ac0f8ff.mp4",
+    caption=Translation.HELP_TEXT,
+    parse_mode="markdown",
+    reply_markup=InlineKeyboardMarkup(
+      [
+        [
+          InlineKeyboardButton("BACK", callback_data="beck")
+        ],
+      ],
+    )
+  )
+
 @TGBot.on_message(filters.command("help", prefixes=["/", "."]))
-async def help_message(bot, message):
+async def help_single_message(bot, message):
   await message.reply_video(
     video="https://telegra.ph/file/ebd8a53dafca84ac0f8ff.mp4",
     caption=Translation.HELP_TEXT,
-    parse_mode="markdown"
+    parse_mode="markdown",
+    reply_markup=InlineKeyboardMarkup(
+      [
+        [
+          InlineKeyboardButton("NETWORK", url="https://t.me/StrawHat_Network")
+        ],
+      ],
+    )
   )
-  
 
-
-
-@TGBot.on_message(filters.command("about", prefixes=["/", "."]))
-async def about_message(bot, message):
-  await message.reply_video(
-    video="https://telegra.ph/file/33186a24917037de0d97a.mp4",
-    caption=Translation.ABOUT_TEXT,
-    parse_mode="markdown"
-  )

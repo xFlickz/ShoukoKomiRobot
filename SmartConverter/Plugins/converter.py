@@ -14,6 +14,8 @@ import asyncio
 from .. import TGBot
 from pyrogram import filters
 from pyrogram.types import Message, InlineKeyboardButton, InlineKeyboardMarkup
+from SmartConverter.Plugins.helper import *
+
 
 @TGBot.on_message(filters.incoming & (filters.video | filters.document))
 async def pdf_message(bot, message):
@@ -122,6 +124,8 @@ async def pdf_call(bot ,update):
       )
       os.remove(o)
       await sent_message.delete()
+  elif update.data == "hilp":
+    await help_message(bot, update)
   elif update.data == "epub":
     await update.message.delete()
     download_location = Config.DOWNLOAD_LOCATION + "/"
