@@ -2,8 +2,41 @@ from SmartConverter.Plugins.converter import *
 from hachoir.metadata import extractMetadata
 from hachoir.parser import createParser
 @TGBot.on_callback_query()
-async def pdf_call(bot ,update):
-  if update.data == "pdf":
+async def calls(bot ,update):
+  if update.data == "video_file":
+    await update.message.edit_text(
+      text="Sᴇʟᴇᴄᴛ Tʜᴇ Fᴏʀᴍᴀᴛ Yᴏᴜ Wᴀɴɴᴀ Cᴏɴᴠᴇʀᴛ",
+      reply_markup=InlineKeyboardMarkup(
+        [
+          [
+            InlineKeyboardButton("✫𝙼𝙿4✫", callback_data="mp4"),
+            InlineKeyboardButton("✫𝙼𝙺𝚅✫", callback_data="mkv"),
+            InlineKeyboardButton("✫𝚂𝚃𝚁𝙴𝙰𝙼✫", callback_data="stream")
+            InlineKeyboardButton("🔙", callback_data="back_to")],
+        ],
+      )
+  elif update.data == "back_to":
+  async def back_man(bot, update):
+    await update.message.edit_text(
+      text="Sᴇʟᴇᴄᴛ Tʜᴇ Fᴏʀᴍᴀᴛ Yᴏᴜ Wᴀɴɴᴀ Cᴏɴᴠᴇʀᴛ",
+      reply_markup=InlineKeyboardMarkup(
+        [
+          [
+            InlineKeyboardButton("✫𝙿𝙳𝙵✫", callback_data="pdf"),
+            InlineKeyboardButton("✫𝙴𝙿𝚄𝙱✫", callback_data="epub"),
+            InlineKeyboardButton("✫𝙲𝙱𝚉✫", callback_data="cbz")
+          ],
+          [
+            InlineKeyboardButton("✫𝙳𝙾𝙲𝚇✫",callback_data="docx"),
+            InlineKeyboardButton("✫𝙷𝚃𝙼𝙻✫", callback_data="doc"),
+            InlineKeyboardButton("✫𝚃𝚇𝚃✫", callback_data="txt")
+          ],
+          [
+            InlineKeyboardMarkup("✫𝚅𝙸𝙳𝙴𝙾 𝚄𝚃𝙸𝙻𝚂✫", callback_data="video_file")],
+        ],
+      )
+    )
+  elif update.data == "pdf":
     await update.message.delete()
     
     download_location = Config.DOWNLOAD_LOCATION + "/"
@@ -590,6 +623,11 @@ async def pdf_call(bot ,update):
       metadata = extractMetadata(createParser(o))
       if metadata.has("duration"):
         duration = metadata.get('duration').seconds
+      if metadata.has("width"):
+        width = metadata.get("width")
+      if metadata.has("height"):
+        height = metadata.get("height")
+        
       logger.info(o)
       if o is not None:
         await bot.edit_message_text(
@@ -601,6 +639,8 @@ async def pdf_call(bot ,update):
           chat_id=update.message.chat.id,
           video=o,
           duration=duration,
+          width=width,
+          height=height,
           supports_streaming=True,
           caption=f"**{o}**",
           progress=progress_for_pyrogram,
