@@ -5,15 +5,14 @@ Join his network and support him.
 from pyrogram import Client
 from pyrogram.types import CallbackQuery
 
-
 from SmartConverter.Plugins.converter import *
 from SmartConverter.translation import Translation
 
 from SmartConverter.Plugins.cb import *
 
 @TGBot.on_message(filters.command("start", prefixes=["/", "."]))
-async def start_cmd_handler(bot, update):
-  await update.reply_video(
+async def start_cmd_handler(bot, message):
+  await message.reply_video(
     video="https://telegra.ph/file/d344fcd1367121197eccc.mp4",
     caption=Translation.START_TEXT,
     reply_markup=InlineKeyboardMarkup(
@@ -32,16 +31,10 @@ async def start_cmd_handler(bot, update):
   )
   
 @TGBot.on_callback_query()
-async def c_b(bot: Client, update: CallbackQuery):
-  if "help" == update.data:
-      await help_message(bot, update)
-  elif "about" == update.data:
-      await about_message(bot, update)
-  elif "back" == update.data:
-      await back_message(bot, update)
-  else:
-      pass
-    
-    
-    
-    
+async def c_b(bot, update):
+  if update.data == "help":
+    await help_message(bot, update)
+  elif update.data == "about":
+    await about_message(bot, update)
+  elif update.data == "back":
+    await back_message(bot, update)

@@ -2,7 +2,8 @@ from SmartConverter.Plugins.converter import *
 from SmartConverter.Plugins.helper import *
 
 async def help_message(bot, update):
-  await bot.messages.delete(chat_id=update.message.chat.id, message_ids=update.message.message_id)
+  await update.message.delete()
+  await asyncio.sleep(0.5)
   await bot.send_video(
     chat_id=update.message.chat.id,
     video="https://telegra.ph/file/ebd8a53dafca84ac0f8ff.mp4",
