@@ -25,8 +25,7 @@ async def start_cmd_handler(bot, message):
         ],
       ],
     ),
-    parse_mode="md",
-    quote=True
+    parse_mode="md"
   )
 
 
