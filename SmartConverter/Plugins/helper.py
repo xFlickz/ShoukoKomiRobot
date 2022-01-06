@@ -17,11 +17,11 @@ async def start_cmd_handler(bot, message):
     reply_markup=InlineKeyboardMarkup(
       [
         [
-          InlineKeyboardButton("✫𝙷𝙴𝙻𝙿✫", callback_data="hilp"),
-          InlineKeyboardButton("✫𝙳𝙴𝚅✫", url="https://t.me/Bro_isDarkal")
+          InlineKeyboardButton("✫𝙳𝙴𝚅✫", url="https://t.me/Bro_isDarkal"),
+          InlineKeyboardButton("✫𝙽𝙴𝚃𝚆𝙾𝚁𝙺✫", url="https://t.me/StrawHat_Network")
         ],
         [
-          InlineKeyboardButton("✫𝙽𝙴𝚃𝚆𝙾𝚁𝙺✫", url="http://t.me/StrawHat_Network")
+          InlineKeyboardButton("✫𝙷𝙴𝙻𝙿✫", callback_data="hilp")
         ],
       ],
     ),
@@ -32,8 +32,7 @@ async def start_cmd_handler(bot, message):
 
 
 async def help_message(bot, update):
-  await update.message.edit_media(
-    media="https://telegra.ph/file/ebd8a53dafca84ac0f8ff.mp4",
+  await update.message.edit_caption(
     caption=Translation.HELP_TEXT,
     parse_mode="markdown",
     reply_markup=InlineKeyboardMarkup(
@@ -63,17 +62,16 @@ async def help_single_message(bot, message):
 
 
 async def back_handler(bot, update):
-  await update.message.edit_media(
-    media="https://telegra.ph/file/d344fcd1367121197eccc.mp4",
+  await update.message.edit_caption(
     caption=Translation.START_TEXT,
     reply_markup=InlineKeyboardMarkup(
       [
         [
-          InlineKeyboardButton("✫𝙷𝙴𝙻𝙿✫", callback_data="hilp"),
-          InlineKeyboardButton("✫𝙳𝙴𝚅✫", url="https://t.me/Bro_isDarkal")
+          InlineKeyboardButton("✫𝙳𝙴𝚅✫", url="https://t.me/Bro_isDarkal"),
+          InlineKeyboardButton("✫𝙽𝙴𝚃𝚆𝙾𝚁𝙺✫", url="https://t.me/StrawHat_Network")
         ],
         [
-          InlineKeyboardButton("✫𝙽𝙴𝚃𝚆𝙾𝚁𝙺✫", url="http://t.me/StrawHat_Network")
+          InlineKeyboardButton("✫𝙷𝙴𝙻𝙿✫", callback_data="hilp")
         ],
       ],
     ),
