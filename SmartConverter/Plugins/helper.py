@@ -34,12 +34,14 @@ async def start_cmd_handler(bot, update):
 @TGBot.on_callback_query()
 async def c_b(bot: Client, update: CallbackQuery)
   cb = update.data
-  if "help" in cb:
+  if "help" == cb:
     await help_message(bot, update)
-  elif "about" in cb:
+  elif "about" == cb:
     await about_message(bot, update)
-  elif "back" in cb:
+  elif "back" == cb:
     await back_message(bot, update)
+  else:
+    pass
     
     
     
