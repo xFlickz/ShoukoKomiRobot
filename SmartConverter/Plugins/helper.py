@@ -2,6 +2,8 @@
 This Bot Was Developed By The Owner Of @StrawHat_Network.
 Join his network and support him.
 """
+from pyrogram import Client
+from pyrogram.types import CallbackQuery
 
 
 from SmartConverter.Plugins.converter import *
@@ -30,7 +32,7 @@ async def start_cmd_handler(bot, update):
   )
   
 @TGBot.on_callback_query()
-async def c_b(bot, update):
+async def c_b(bot: Client, update: CallbackQuery)
   cb = update.data
   if "help" in cb:
     await help_message(bot, update)
