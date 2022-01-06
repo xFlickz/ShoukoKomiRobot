@@ -13,7 +13,7 @@ from SmartConverter.Plugins.cb import *
 
 @TGBot.on_message(filters.command("start", prefixes=["/", "."]))
 async def start_cmd_handler(bot, update):
-  await update.reply_video(
+  await message.reply_video(
     video="https://telegra.ph/file/d344fcd1367121197eccc.mp4",
     caption=Translation.START_TEXT,
     reply_markup=InlineKeyboardMarkup(
@@ -27,7 +27,7 @@ async def start_cmd_handler(bot, update):
         ],
       ],
     ),
-    parse_mode="markdown",
+    parse_mode="md",
     quote=True
   )
   
