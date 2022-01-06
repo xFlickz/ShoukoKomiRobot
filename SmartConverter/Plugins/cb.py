@@ -473,4 +473,148 @@ async def pdf_call(bot ,update):
       )
       os.remove(o)
       await sent_message.delete()
-  
+  elif update.data == "mkv":
+    await update.message.delete()
+    download_location = Config.DOWNLOAD_LOCATION + "/"
+    await asyncio.sleep(1)
+    sent_message = await bot.send_message(
+      text="`𝙳𝚘𝚠𝚗𝚕𝚘𝚊𝚍𝚒𝚗𝚐 ...`",
+      chat_id=update.message.chat.id,
+      reply_to_message_id=update.message.reply_to_message.message_id
+    )
+    c_time = time.time()
+    f_n = await bot.download_media(
+      message=update.message.reply_to_message,
+      file_name=download_location,
+      progress=progress_for_pyrogram,
+      progress_args=(
+        bot,
+        "`𝙳𝚘𝚠𝚗𝚕𝚘𝚊𝚍𝚒𝚗𝚐 ...`",
+        sent_message,
+        c_time
+      )
+    )
+            
+    logger.info(f_n)
+    if f_n.rsplit(".", 1)[-1].lower() not in ["mkv", "mp4", "webm"]:
+      return await bot.edit_message_text(
+        chat_id=update.message.chat.id,
+        text="This Format not Allowed!",
+        message_id=sent_message.message_id
+      )
+    kk = f_n.split("/")[-1]
+    aa = kk.split(".")[-1]
+    o = kk.replace(f".{aa}", ".mkv")
+    if f_n is not None:
+      await bot.edit_message_text(
+        text="`𝙿𝚛𝚘𝚌𝚎𝚜𝚜𝚒𝚗𝚐 𝚢𝚘𝚞𝚛 𝚏𝚒𝚕𝚎 ...`",
+        chat_id=update.message.chat.id,
+        message_id=sent_message.message_id
+      )
+      await asyncio.sleep(1)
+      await bot.edit_message_text(
+        text="`𝙲𝚘𝚗𝚟𝚎𝚛𝚝𝚒𝚗𝚐 ...`",
+        chat_id=update.message.chat.id,
+        message_id=sent_message.message_id
+      )
+      os.rename(f_n, o)
+        
+      logger.info(o)
+      if o is not None:
+        await bot.edit_message_text(
+          text="`𝚄𝚙𝚕𝚊𝚘𝚍𝚒𝚗𝚐 ...`",
+          chat_id=update.message.chat.id,
+          message_id=sent_message.message_id
+        )
+        await bot.send_document(
+          chat_id=update.message.chat.id,
+          document=o,
+          force_document=True,
+          caption=f"**{o}**",
+          progress=progress_for_pyrogram,
+          progress_args=(bot,"`𝚄𝚙𝚕𝚊𝚘𝚍𝚒𝚗𝚐 ...`", sent_message, c_time
+          )
+        )
+        os.remove(o)
+        await sent_message.delete()
+  elif update.data == "stream":
+    await update.message.delete()
+    download_location = Config.DOWNLOAD_LOCATION + "/"
+    await asyncio.sleep(1)
+    sent_message = await bot.send_message(
+      text="`𝙳𝚘𝚠𝚗𝚕𝚘𝚊𝚍𝚒𝚗𝚐 ...`",
+      chat_id=update.message.chat.id,
+      reply_to_message_id=update.message.reply_to_message.message_id
+    )
+    c_time = time.time()
+    f_n = await bot.download_media(
+      message=update.message.reply_to_message,
+      file_name=download_location,
+      progress=progress_for_pyrogram,
+      progress_args=(
+        bot,
+        "`𝙳𝚘𝚠𝚗𝚕𝚘𝚊𝚍𝚒𝚗𝚐 ...`",
+        sent_message,
+        c_time
+      )
+    )
+              
+    logger.info(f_n)
+    if f_n.rsplit(".", 1)[-1].lower() not in ["mkv", "mp4", "webm"]:
+      return await bot.edit_message_text(
+        chat_id=update.message.chat.id,
+        text="This Format not Allowed!",
+        message_id=sent_message.message_id
+      )
+    kk = f_n.split("/")[-1]
+    aa = kk.split(".")[-1]
+    o = kk.replace(f".{aa}", ".mp4")
+    if f_n is not None:
+      await bot.edit_message_text(
+        text="`𝙿𝚛𝚘𝚌𝚎𝚜𝚜𝚒𝚗𝚐 𝚢𝚘𝚞𝚛 𝚏𝚒𝚕𝚎 ...`",
+        chat_id=update.message.chat.id,
+        message_id=sent_message.message_id
+      )
+      await asyncio.sleep(1)
+      await bot.edit_message_text(
+        text="`𝙲𝚘𝚗𝚟𝚎𝚛𝚝𝚒𝚗𝚐 ...`",
+        chat_id=update.message.chat.id,
+        message_id=sent_message.message_id
+      )
+      cmd = f'''ffmpeg -i -hide_banner -loglevel quiet """{f_n}""" -c:v libx264 -map 0 -c:s mov_text -c:a copy -strict -2 """{o}""" -y'''
+      proce = await asyncio.create_subprocess_shell(
+        cmd,
+        stdout=asyncio.subprocess.PIPE,
+        stderr=asyncio.subprocess.PIPE,
+      )
+      stdout, stderr = await proce.communicate()
+      e_response = stderr.decode().strip()
+      t_response = stdout.decode().strip()
+      logger.info(e_response)
+      logger.info(t_response)
+      if os.path.lexists(o):
+        return o
+      else:
+        return None
+      
+          
+      logger.info(o)
+      if o is not None:
+        await bot.edit_message_text(
+          text="`𝚄𝚙𝚕𝚊𝚘𝚍𝚒𝚗𝚐 ...`",
+          chat_id=update.message.chat.id,
+          message_id=sent_message.message_id
+        )
+        await bot.send_video(
+          chat_id=update.message.chat.id,
+          video=o,
+          caption=f"**{o}**",
+          progress=progress_for_pyrogram,
+          progress_args=(bot,"`𝚄𝚙𝚕𝚊𝚘𝚍𝚒𝚗𝚐 ...`", sent_message, c_time
+          )
+        )
+        os.remove(o)
+        await sent_message.delete()
+        
+        
+# (c) DARK
