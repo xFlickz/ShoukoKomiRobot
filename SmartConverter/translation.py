@@ -1,4 +1,6 @@
 class Translation:
-  START_TEXT = "✫𝖧𝖾𝗅𝗅𝗈, 𝖨 𝖺𝗆 𝖪𝗈𝗆𝗂. 𝖨 𝖼𝖺𝗇 𝖼𝗈𝗇𝗏𝖾𝗋𝗍 𝗏𝖺𝗋𝗂𝗈𝗎𝗌 𝖿𝗂𝗅𝖾𝗌 𝗂𝗇 𝗒𝗈𝗎𝗋 𝖽𝖾𝗌𝗂𝗋𝖾𝖽 𝖿𝗈𝗋𝗆𝖺𝗍.\n𝖯𝗅𝖾𝖺𝗌𝖾 𝖩𝗈𝗂𝗇 𝖬𝗒 𝖭𝖾𝗍𝗐𝗈𝗋𝗄 𝖠𝗅𝗌𝗈✫"
+  START_TEXT = "✫Hᴇʟʟᴏ, I ᴀᴍ Kᴏᴍɪ. I ᴄᴀɴ ᴄᴏɴᴠᴇʀᴛ ᴠᴀʀɪᴏᴜs ғɪʟᴇs ɪᴍ ʏᴏᴜʀ ᴅᴇsɪʀᴇᴅ ғᴏʀᴍᴀᴛ.\nKɪɴᴅʟʏ, Jᴏɪɴ ᴍʏ ɴᴇᴛᴡᴏʀᴋ ᴛᴏᴏ✫"
   
-  HELP_TEXT = "𝖩𝗎𝗌𝗍 𝗌𝖾𝗇𝖽 𝗆𝖾 𝖺 𝖿𝗂𝗅𝖾 𝗍𝗈 𝗀𝖾𝗍 𝗌𝗍𝖺𝗋𝗍𝖾𝖽\n𝖠𝗅𝗅𝗈𝗐𝖾𝖽 𝖥𝗈𝗋𝗆𝖺𝗍𝗌 𝖺𝗋𝖾 𝖾𝗉𝗎𝖻, 𝗉𝖽𝖿, 𝖽𝗈𝖼𝗑, 𝖽𝗈𝖼, 𝖼𝖻𝗓 𝖺𝗇𝖽 𝗍𝗑𝗍"
+  HELP_TEXT = "✫Jᴜsᴛ sᴇɴᴅ ᴍᴇ ᴀ ᴠɪᴅᴇᴏ ᴏʀ ғɪʟᴇ ᴛᴏ ɢᴇᴛ sᴛᴀʀᴛᴇᴅ. I ᴄᴀɴ ᴄᴏɴᴠᴇʀᴛ ᴘᴅғ, ᴇᴘᴜʙ, ᴅᴏᴄx ʟɪʟᴇ ᴅᴏᴄᴜᴍᴇɴᴛs ᴀʟsᴏ. I ʜᴀᴠᴇ ᴘᴏᴛᴇɴᴛɪᴀʟ ᴛᴏ ᴄᴏɴᴠᴇʀᴛ ᴍᴘ𝟺 ɪɴ ᴍᴋᴠ, sᴛʀᴇᴀᴍ ᴀɴᴅ ᴠɪᴄᴇ-ᴠᴇʀsᴀ✫"
+  
+  ABOUT_TEXT = "**LANGUAGE** [Python](https://www.python.org)\n**LIBRARY** [Pyrogram](https://www.pyrogram.org)\n**SOURCE CODE** [Click me](https://t.me/Shity_man)\n**DEV** [Dark](https://t.me/Bro_isDarkal)"

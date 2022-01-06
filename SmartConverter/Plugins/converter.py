@@ -33,7 +33,12 @@ async def pdf_message(bot, message):
         [
           InlineKeyboardButton("Docx",callback_data="docx"),
           InlineKeyboardButton("Doc", callback_data="doc"),
-          InlineKeyboardButton("Txt", callback_data="txt")],
+          InlineKeyboardButton("Txt", callback_data="txt")
+        ],
+        [
+          InlineKeyboardButton("Mp4", callback_data="mp4"),
+          InlineKeyboardButton("Mkv", callback_data="mkv"),
+          InlineKeyboardButton("Stream", callback_data="stream")],
       ],
     ),
     quote=True,
