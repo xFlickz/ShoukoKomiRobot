@@ -581,7 +581,7 @@ async def pdf_call(bot ,update):
         chat_id=update.message.chat.id,
         message_id=sent_message.message_id
       )
-      cmd = f'''ffmpeg -i -hide_banner -loglevel quiet """{f_n}""" -c:v libx264 -map 0 -c:a copy """{o}""" -y'''
+      cmd = f'''ffmpeg -i -hide_banner -loglevel quiet """{f_n}""" -c:v copy -c:a copy -c:s copy -map 0:a? -map 0:v? -map 0:s? """{o}""" -y'''
       proce = await asyncio.create_subprocess_shell(
         cmd,
         stdout=asyncio.subprocess.PIPE,
