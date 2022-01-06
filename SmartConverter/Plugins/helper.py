@@ -2,13 +2,12 @@
 This Bot Was Developed By The Owner Of @StrawHat_Network.
 Join his network and support him.
 """
+
 from pyrogram import Client
 from pyrogram.types import CallbackQuery
 
 from SmartConverter.Plugins.converter import *
 from SmartConverter.translation import Translation
-
-from SmartConverter.Plugins.cb import *
 
 @TGBot.on_message(filters.command("start", prefixes=["/", "."]))
 async def start_cmd_handler(bot, message):
@@ -18,8 +17,8 @@ async def start_cmd_handler(bot, message):
     reply_markup=InlineKeyboardMarkup(
       [
         [
-          InlineKeyboardButton("✫𝙷𝙴𝙻𝙿✫", callback_data="help"),
-          InlineKeyboardButton("✫𝙰𝙱𝙾𝚄𝚃✫", callback_data="about")
+          InlineKeyboardButton("✫𝙷𝙴𝙻𝙿✫", url="https://t.me/TG_FileConverterBot?start=help"),
+          InlineKeyboardButton("✫𝙰𝙱𝙾𝚄𝚃✫", url="https://t.me/TG_FileConverterBot?start=about")
         ],
         [
           InlineKeyboardButton("✫𝙽𝙴𝚃𝚆𝙾𝚁𝙺✫", url="http://t.me/StrawHat_Network")
@@ -29,12 +28,23 @@ async def start_cmd_handler(bot, message):
     parse_mode="md",
     quote=True
   )
+
+
+@TGBot.on_message(filters.command("help", prefixes=["/", "."]))
+async def help_message(bot, message):
+  await message.reply_video(
+    video="https://telegra.ph/file/ebd8a53dafca84ac0f8ff.mp4",
+    caption=Translation.HELP_TEXT,
+    parse_mode="markdown"
+  )
   
-@TGBot.on_callback_query()
-async def c_b(bot, update):
-  if update.data == "help":
-    await help_message(bot, update)
-  elif update.data == "about":
-    await about_message(bot, update)
-  elif update.data == "back":
-    await back_message(bot, update)
+
+
+
+@TGBot.on_message(filters.command("about", prefixes=["/", "."]))
+async def about_message(bot, message):
+  await message.reply_video(
+    video="https://telegra.ph/file/33186a24917037de0d97a.mp4",
+    caption=Translation.ABOUT_TEXT,
+    parse_mode="markdown"
+  )
