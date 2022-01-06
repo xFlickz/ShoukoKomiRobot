@@ -587,7 +587,7 @@ async def pdf_call(bot ,update):
       width = 0
       height = 0
       duration = 0
-      metadata = extractMetadata(createParser(f_n))
+      metadata = extractMetadata(createParser(o))
       if metadata.has("duration"):
         duration = metadata.get('duration').seconds
       logger.info(o)
