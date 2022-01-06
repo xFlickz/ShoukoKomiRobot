@@ -28,19 +28,19 @@ async def pdf_message(bot, message):
     reply_markup=InlineKeyboardMarkup(
       [
         [
-          InlineKeyboardButton("Pdf", callback_data="pdf"),
-          InlineKeyboardButton("Epub", callback_data="epub"),
-          InlineKeyboardButton("Cbz", callback_data="cbz")
+          InlineKeyboardButton("PDF", callback_data="pdf"),
+          InlineKeyboardButton("EPUB", callback_data="epub"),
+          InlineKeyboardButton("CBZ", callback_data="cbz")
         ],
         [
-          InlineKeyboardButton("Docx",callback_data="docx"),
-          InlineKeyboardButton("Doc", callback_data="doc"),
-          InlineKeyboardButton("Txt", callback_data="txt")
+          InlineKeyboardButton("DOCX",callback_data="docx"),
+          InlineKeyboardButton("DOC", callback_data="doc"),
+          InlineKeyboardButton("TXT", callback_data="txt")
         ],
         [
-          InlineKeyboardButton("Mp4", callback_data="mp4"),
-          InlineKeyboardButton("Mkv", callback_data="mkv"),
-          InlineKeyboardButton("Stream", callback_data="stream")],
+          InlineKeyboardButton("MP4", callback_data="mp4"),
+          InlineKeyboardButton("MKV", callback_data="mkv"),
+          InlineKeyboardButton("STREAM", callback_data="stream")],
       ],
     ),
     quote=True,
@@ -126,6 +126,8 @@ async def pdf_call(bot ,update):
       await sent_message.delete()
   elif update.data == "hilp":
     await help_message(bot, update)
+  elif update.data == "beck":
+    await back_handler(bot, update)
   elif update.data == "epub":
     await update.message.delete()
     download_location = Config.DOWNLOAD_LOCATION + "/"
