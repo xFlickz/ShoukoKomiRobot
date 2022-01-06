@@ -568,7 +568,7 @@ async def pdf_call(bot ,update):
       )
     kk = f_n.split("/")[-1]
     aa = kk.split(".")[-1]
-    o = kk.replace(f".{aa}", ".mp4")
+    o = kk.replace(f".{aa}", "Stream.mkv")
     if f_n is not None:
       await bot.edit_message_text(
         text="`𝙿𝚛𝚘𝚌𝚎𝚜𝚜𝚒𝚗𝚐 𝚢𝚘𝚞𝚛 𝚏𝚒𝚕𝚎 ...`",
@@ -581,7 +581,7 @@ async def pdf_call(bot ,update):
         chat_id=update.message.chat.id,
         message_id=sent_message.message_id
       )
-      cmd = f'''ffmpeg -i -hide_banner -loglevel quiet """{f_n}""" -c:v libx264 -map 0 -c:s mov_text -c:a copy -strict -2 """{o}""" -y'''
+      cmd = f'''ffmpeg -i -hide_banner -loglevel quiet """{f_n}""" -c:v libx264 -map 0 -c:a copy """{o}""" -y'''
       proce = await asyncio.create_subprocess_shell(
         cmd,
         stdout=asyncio.subprocess.PIPE,
@@ -608,6 +608,7 @@ async def pdf_call(bot ,update):
         await bot.send_video(
           chat_id=update.message.chat.id,
           video=o,
+          supports_streaming=True,
           caption=f"**{o}**",
           progress=progress_for_pyrogram,
           progress_args=(bot,"`𝚄𝚙𝚕𝚊𝚘𝚍𝚒𝚗𝚐 ...`", sent_message, c_time
