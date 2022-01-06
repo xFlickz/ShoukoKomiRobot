@@ -1,5 +1,6 @@
 from SmartConverter.Plugins.converter import *
-
+from hachoir.metadata import extractMetadata
+from hachoir.parser import createParser
 @TGBot.on_callback_query()
 async def pdf_call(bot ,update):
   if update.data == "pdf":
@@ -583,7 +584,12 @@ async def pdf_call(bot ,update):
       )
       os.rename(f_n, o)
       
-
+      width = 0
+      height = 0
+      duration = 0
+      metadata = extractMetadata(createParser(f_n))
+      if metadata.has("duration"):
+        duration = metadata.get('duration').seconds
       logger.info(o)
       if o is not None:
         await bot.edit_message_text(
@@ -594,6 +600,7 @@ async def pdf_call(bot ,update):
         await bot.send_video(
           chat_id=update.message.chat.id,
           video=o,
+          duration=duration,
           supports_streaming=True,
           caption=f"**{o}**",
           progress=progress_for_pyrogram,
