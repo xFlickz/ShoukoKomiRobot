@@ -568,7 +568,7 @@ async def pdf_call(bot ,update):
       )
     kk = f_n.split("/")[-1]
     aa = kk.split(".")[-1]
-    o = kk.replace(f".{aa}", "Stream.mkv")
+    o = kk.replace(f".{aa}", "Stream.mp4")
     if f_n is not None:
       await bot.edit_message_text(
         text="`𝙿𝚛𝚘𝚌𝚎𝚜𝚜𝚒𝚗𝚐 𝚢𝚘𝚞𝚛 𝚏𝚒𝚕𝚎 ...`",
@@ -581,23 +581,9 @@ async def pdf_call(bot ,update):
         chat_id=update.message.chat.id,
         message_id=sent_message.message_id
       )
-      cmd = f'''ffmpeg -i -hide_banner -loglevel quiet """{f_n}""" -c:v copy -c:a copy -c:s copy -map 0:a? -map 0:v? -map 0:s? """{o}""" -y'''
-      proce = await asyncio.create_subprocess_shell(
-        cmd,
-        stdout=asyncio.subprocess.PIPE,
-        stderr=asyncio.subprocess.PIPE,
-      )
-      stdout, stderr = await proce.communicate()
-      e_response = stderr.decode().strip()
-      t_response = stdout.decode().strip()
-      logger.info(e_response)
-      logger.info(t_response)
-      if os.path.lexists(o):
-        return o
-      else:
-        return None
+      os.rename(f_n, o)
       
-          
+
       logger.info(o)
       if o is not None:
         await bot.edit_message_text(
