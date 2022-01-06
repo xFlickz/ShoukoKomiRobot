@@ -432,7 +432,7 @@ async def pdf_call(bot ,update):
     )
           
     logger.info(f_n)
-    if f_n.rsplit(".", 1)[-1].lower() not in ["epub", "cbz", "pdf", "docx", "doc", "ppt", "mobi", "txt", "zip"]:
+    if f_n.rsplit(".", 1)[-1].lower() not in ["mkv", "mp4", "webm"]:
       return await bot.edit_message_text(
         chat_id=update.message.chat.id,
         text="This Format not Allowed!",
