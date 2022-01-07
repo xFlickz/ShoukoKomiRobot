@@ -11,6 +11,7 @@
     "repository": "https://github.com/StrawHat-Network/ShoukoKomiRobot",
     "website": "",
     "success_url": "http://t.me/StrawHat_Network",
+    "stack": "container",
     "env": {
         "API_HASH": {
             "description": "Your API HASH from my.telegram.org",
@@ -28,15 +29,7 @@
             "description": "Bot owner's UserID.",
             "value": ""
         }
-    },
-    "buildpacks": [
-        {
-            "url": "heroku/python"
-        },
-        {
-            "url": "https://github.com/jonathanong/heroku-buildpack-ffmpeg-latest.git"
-        }
-    ]
+    }
 }
     
         
