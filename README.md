@@ -21,8 +21,8 @@
 
 # Vars
 ```
-API_ID = Get this from telegram.me.org
-API_HASH = Get this from telegram.me.org
+API_ID = Get this from my.telegram.org
+API_HASH = Get this from my.telegram.org 
 BOT_TOKEN = Your telegram bot token
 AUTH_USERS = Your telegram id
 ```
