@@ -1,3 +1,7 @@
+"""
+This Bot Was Developed By The Owner Of @StrawHat_Network.
+Join his network and support him.
+"""
 import logging
 logging.basicConfig(level=logging.DEBUG,
                     format='%(asctime)s - %(name)s - %(levelname)s - %(message)s')
