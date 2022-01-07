@@ -30,7 +30,7 @@ async def calls(bot ,update):
           ],
           [
             InlineKeyboardButton("✫𝙳𝙾𝙲𝚇✫",callback_data="docx"),
-            InlineKeyboardButton("✫𝙷𝚃𝙼𝙻✫", callback_data="doc"),
+            InlineKeyboardButton("✫𝚉𝙸𝙿✫", callback_data="doc"),
             InlineKeyboardButton("✫𝚃𝚇𝚃✫", callback_data="txt")
           ],
           [
@@ -343,7 +343,7 @@ async def calls(bot ,update):
       )
     kk = f_n.split("/")[-1]
     aa = kk.split(".")[-1]
-    o = kk.replace(f".{aa}", ".html")
+    o = kk.replace(f".{aa}", ".zip")
     if f_n is not None:
       await bot.edit_message_text(
         text="`𝙿𝚛𝚘𝚌𝚎𝚜𝚜𝚒𝚗𝚐 𝚢𝚘𝚞𝚛 𝚏𝚒𝚕𝚎 ...`",

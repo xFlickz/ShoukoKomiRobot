@@ -34,7 +34,7 @@ async def pdf_message(bot, message):
         ],
         [
           InlineKeyboardButton("✫𝙳𝙾𝙲𝚇✫",callback_data="docx"),
-          InlineKeyboardButton("✫𝙷𝚃𝙼𝙻✫", callback_data="doc"),
+          InlineKeyboardButton("✫𝚉𝙸𝙿✫", callback_data="doc"),
           InlineKeyboardButton("✫𝚃𝚇𝚃✫", callback_data="txt")
         ],
         [
