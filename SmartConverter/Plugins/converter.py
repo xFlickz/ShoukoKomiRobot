@@ -19,9 +19,9 @@ from SmartConverter.Plugins.helper import *
 
 @TGBot.on_message(filters.incoming & (filters.video | filters.document))
 async def pdf_message(bot, message):
-  if message.chat.id not in Config.AUTH_USERS:
-    await message.reply_text("🚷 No Outsider Allowed ⚠️\n\nThis Bot is For Private Use Only.")
-    return
+  #if message.chat.id not in Config.AUTH_USERS:
+    #await message.reply_text("🚷 No Outsider Allowed ⚠️\n\nThis Bot is For Private Use Only.")
+    #return
   
   await message.reply_text(
     text="Sᴇʟᴇᴄᴛ Tʜᴇ Fᴏʀᴍᴀᴛ Yᴏᴜ Wᴀɴɴᴀ Cᴏɴᴠᴇʀᴛ",
