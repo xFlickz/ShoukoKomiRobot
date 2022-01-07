@@ -1,3 +1,8 @@
+"""
+This Bot Was Developed By The Owner Of @StrawHat_Network.
+Join his network and support him.
+"""
+
 from SmartConverter.Plugins.converter import *
 from hachoir.metadata import extractMetadata
 from hachoir.parser import createParser
