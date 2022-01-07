@@ -1,3 +1,7 @@
+"""
+This Bot Was Developed By The Owner Of @StrawHat_Network.
+Join his network and support him.
+"""
 class Translation:
   START_TEXT = "✫Hᴇʟʟᴏ, I ᴀᴍ Kᴏᴍɪ. I ᴄᴀɴ ᴄᴏɴᴠᴇʀᴛ ᴠᴀʀɪᴏᴜs ғɪʟᴇs ɪᴍ ʏᴏᴜʀ ᴅᴇsɪʀᴇᴅ ғᴏʀᴍᴀᴛ.\nKɪɴᴅʟʏ, Jᴏɪɴ ᴍʏ ɴᴇᴛᴡᴏʀᴋ ᴛᴏᴏ✫"
   
