@@ -31,7 +31,7 @@ async def calls(bot ,update):
           [
             InlineKeyboardButton("✫𝙿𝙳𝙵✫", callback_data="pdf"),
             InlineKeyboardButton("✫𝙴𝙿𝚄𝙱✫", callback_data="epub"),
-            InlineKeyboardButton("✫𝙲𝙱𝚉✫", callback_data="cbz")
+            InlineKeyboardButton("✫𝙼𝙾𝙱𝙸✫", callback_data="cbz")
           ],
           [
             InlineKeyboardButton("✫𝙳𝙾𝙲𝚇✫",callback_data="docx"),
@@ -216,7 +216,7 @@ async def calls(bot ,update):
       )
     kk = f_n.split("/")[-1]
     aa = kk.split(".")[-1]
-    o = kk.replace(f".{aa}", ".cbz")
+    o = kk.replace(f".{aa}", ".mobi")
     if f_n is not None:
       await bot.edit_message_text(
         text="`𝙿𝚛𝚘𝚌𝚎𝚜𝚜𝚒𝚗𝚐 𝚢𝚘𝚞𝚛 𝚏𝚒𝚕𝚎 ...`",
