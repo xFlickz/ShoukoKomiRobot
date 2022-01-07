@@ -76,3 +76,4 @@ async def back_handler(bot, update):
     ),
     parse_mode="md"
   )
+# Restart and eval in next update 
