@@ -38,7 +38,7 @@ async def pdf_message(bot, message):
           InlineKeyboardButton("✫𝚃𝚇𝚃✫", callback_data="txt")
         ],
         [
-          InlineKeyboardMarkup("✫𝚅𝙸𝙳𝙴𝙾 𝚄𝚃𝙸𝙻𝚂✫", callback_data="video_file")],
+          InlineKeyboardButton("✫𝚅𝙸𝙳𝙴𝙾 𝚄𝚃𝙸𝙻𝚂✫", callback_data="video_file")],
       ],
     ),
     quote=True,
