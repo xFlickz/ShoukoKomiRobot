@@ -1,16 +1,19 @@
 # ShoukoKomiRobot 
 
-• Written In `Python3`
+• 𝕎𝕣𝕚𝕥𝕥𝕖𝕟 𝕀𝕟 `Python3`
 
 
-• Library Used `Pyrogram`
+• 𝕃𝕚𝕓𝕣𝕒𝕣𝕪 𝕌𝕤𝕖𝕕 `Pyrogram`
 
 
-• Softwares used `Ebook-convert`
+• 𝕊𝕠𝕗𝕥𝕨𝕒𝕣𝕖 𝕌𝕤𝕖𝕕 `Ebook-convert`
 
 # Deploy
-Fork this repo to modify the code and click this deploy button to host your bot on heroku
-Dont forget to give this repo stars and join our Telegram Network.
+
+𝔽𝕠𝕣𝕜 𝕥𝕙𝕚𝕤 𝕣𝕖𝕡𝕠 𝕥𝕠 𝕞𝕠𝕕𝕚𝕗𝕪 𝕥𝕙𝕖 𝕔𝕠𝕕𝕖 𝕒𝕟𝕕 𝕔𝕝𝕚𝕔𝕜 𝕥𝕙𝕚𝕤 𝕕𝕖𝕡𝕝𝕠𝕪 𝕓𝕦𝕥𝕥𝕠𝕟 𝕥𝕠 𝕙𝕠𝕤𝕥 𝕪𝕠𝕦𝕣 𝕓𝕠𝕥 𝕠𝕟 𝕙𝕖𝕣𝕠𝕜𝕦
+
+
+𝔻𝕠𝕟𝕥 𝕗𝕠𝕣𝕘𝕖𝕥 𝕥𝕠 𝕘𝕚𝕧𝕖 𝕥𝕙𝕚𝕤 𝕣𝕖𝕡𝕠 𝕤𝕥𝕒𝕣𝕤 𝕒𝕟𝕕 𝕛𝕠𝕚𝕟 𝕠𝕦𝕣 𝕋𝕖𝕝𝕖𝕘𝕣𝕒𝕞 ℕ𝕖𝕥𝕨𝕠𝕣𝕜.
 
 
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
