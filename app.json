@@ -1,0 +1,36 @@
+{
+  "name": "VideoCompressBot",
+  "description": "Telegram's best Converter Bot",
+  "logo": "https://telegra.ph/file/b687febf32e4d583fb1d4.jpg",
+  "keywords": [
+    "telegram",
+    "best",
+    "converter",
+    "bot"
+  ],
+  "success_url": "https://t.me/StrawHat_Network",
+  "website": "https://t.me/StrawHat_Network",
+  "repository": "https://github.com/StrawHat-Network/ShoukoKomiRobot",
+  "env": {
+    "BOT_TOKEN": {
+      "description": "Your bot token, as a string. Get this from @BotFather",
+      "value": "",
+      "required": true
+    },
+    "APP_ID": {
+      "description": "Get this value from https://my.telegram.org",
+      "value": "",
+      "required": true
+    },
+    "API_HASH": {
+      "description": "Get this value from https://my.telegram.org",
+      "value": "",
+      "required": true
+    "AUTH_USERS": {
+      "description": "Allow only pre-defined users to use this bot as Sudo User. Separate with Space. Just for using Admin Commands.",
+      "value": "1666551439",
+      "required": true
+    }
+  },
+  "stack": "container"
+}
