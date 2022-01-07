@@ -20,9 +20,7 @@ async def calls(bot ,update):
     )
     
   elif update.data == "back_to":
-    await update.message.delete()
-    await update.message.reply_text(
-      text="Sᴇʟᴇᴄᴛ Tʜᴇ Fᴏʀᴍᴀᴛ Yᴏᴜ Wᴀɴɴᴀ Cᴏɴᴠᴇʀᴛ",
+    await update.message.edit_reply_markup(
       reply_markup=InlineKeyboardMarkup(
         [
           [
@@ -38,9 +36,7 @@ async def calls(bot ,update):
           [
             InlineKeyboardButton("✫𝚅𝙸𝙳𝙴𝙾 𝚄𝚃𝙸𝙻𝚂✫", callback_data="video_file")],
         ],
-      ),
-      quote=True,
-      parse_mode="markdown"
+      )
     )
   elif update.data == "pdf":
     await update.message.delete()
