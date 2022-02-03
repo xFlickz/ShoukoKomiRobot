@@ -11,8 +11,8 @@ from SmartConverter.translation import Translation
 
 @TGBot.on_message(filters.command("start", prefixes=["/", "."]))
 async def start_cmd_handler(bot, message):
-  await message.reply_video(
-    video="https://telegra.ph/file/d344fcd1367121197eccc.mp4",
+  await message.reply_photo(
+    photo="https://telegra.ph/file/583b478a0de6686d29dd9.jpg",
     caption=Translation.START_TEXT,
     reply_markup=InlineKeyboardMarkup(
       [
