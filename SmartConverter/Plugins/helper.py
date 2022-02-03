@@ -1,5 +1,5 @@
 """
-This Bot Was Developed By The Owner Of @StrawHat_Network.
+This Bot Was Developed By The Owner Of @XFlick.
 Join his network and support him.
 """
 
@@ -17,8 +17,8 @@ async def start_cmd_handler(bot, message):
     reply_markup=InlineKeyboardMarkup(
       [
         [
-          InlineKeyboardButton("✫𝙳𝙴𝚅✫", url="https://t.me/Bro_isDarkal"),
-          InlineKeyboardButton("✫𝙽𝙴𝚃𝚆𝙾𝚁𝙺✫", url="https://t.me/StrawHat_Network")
+          InlineKeyboardButton("✫𝙳𝙴𝚅✫", url="https://t.me/XFlick"),
+          InlineKeyboardButton("✫Group✫", url="https://t.me/XFlickSupport_Group")
         ],
         [
           InlineKeyboardButton("✫𝙷𝙴𝙻𝙿✫", callback_data="hilp")
@@ -52,7 +52,7 @@ async def help_single_message(bot, message):
     reply_markup=InlineKeyboardMarkup(
       [
         [
-          InlineKeyboardButton("✫𝙽𝙴𝚃𝚆𝙾𝚁𝙺✫", url="https://t.me/StrawHat_Network")
+          InlineKeyboardButton("✫𝙽𝙴𝚃𝚆𝙾𝚁𝙺✫", url="https://t.me/AnimeXflickz")
         ],
       ],
     )
@@ -66,8 +66,8 @@ async def back_handler(bot, update):
     reply_markup=InlineKeyboardMarkup(
       [
         [
-          InlineKeyboardButton("✫𝙳𝙴𝚅✫", url="https://t.me/Bro_isDarkal"),
-          InlineKeyboardButton("✫𝙽𝙴𝚃𝚆𝙾𝚁𝙺✫", url="https://t.me/StrawHat_Network")
+          InlineKeyboardButton("✫𝙳𝙴𝚅✫", url="https://t.me/XFlick"),
+          InlineKeyboardButton("✫𝙽𝙴𝚃𝚆𝙾𝚁𝙺✫", url="https://t.me/AnimeXflickz")
         ],
         [
           InlineKeyboardButton("✫𝙷𝙴𝙻𝙿✫", callback_data="hilp")
