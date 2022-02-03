@@ -18,8 +18,9 @@ async def start_cmd_handler(bot, message):
       [
         [
           InlineKeyboardButton("✫𝙳𝙴𝚅✫", url="https://t.me/XFlick"),
-          InlineKeyboardButton("✫Group✫", url="https://t.me/XFlickSupport_Group")
+          InlineKeyboardButton("✫Group✫", url="https://t.me/+hpCwlBcPJtI1ZDU9")
         ],
+
         [
           InlineKeyboardButton("✫𝙷𝙴𝙻𝙿✫", callback_data="hilp")
         ],
